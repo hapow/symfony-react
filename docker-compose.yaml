@@ -1,0 +1,29 @@
+version: "3.9"
+
+#symfony6
+#react17
+#phpmyadmin
+#liée avec git?
+
+services:
+    phpadmin:
+        image: phpmyadmin
+        container_name: phpadmin
+        ports:
+        - "8080:80"
+
+    symfony6:
+        container_name: php8-sf6
+        build:
+            context: .
+            dockerfile: DockerfileS
+        ports:
+        - "9000:8000"
+
+    react17:
+        container_name: node16
+        build:
+            context: .
+            dockerfile: DockerfileR
+        ports:
+        - "80:80"
